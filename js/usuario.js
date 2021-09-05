@@ -1,14 +1,14 @@
 class Usuario {
-    constructor(user, password, nombre, email) {
-        this.user = user;
+    constructor(username, password, nombre, email) {
+        this.username = username;
         this.password = password;
         this.nombre = nombre;
         this.email = email;
         this.avatar = '';
         this.suspendido = false;
     }
-    getUser() {
-        return this.user;
+    getUsername() {
+        return this.username;
     }
     getPassword() {
         return this.password;
@@ -31,34 +31,40 @@ class Usuario {
     setAvatar(avatar) {
         this.avatar = avatar;
     }
+    setSuspendido(valor) {
+        this.suspendido = valor;
+    }
 }
 class Administrador extends Usuario {
-    constructor(user, password, nombre, email) {
-        super(user, password, nombre, email);
+    constructor(username, password, nombre, email) {
+        super(username, password, nombre, email);
     }
-    getUsuarios() {
-        cargarUsuarios();
-        return usuarios;
-    }
+    getUsuarios() {}
     crearUsuario() {
-        let user= document.querySelector("#user").value;
-        let password= document.querySelector("#password").value;
-        let nombre= document.querySelector("#nombre").value;
-        let email= document.querySelector("#email").value;
-        let usuario = new Usuario(user, password, nombre, email);
-        let usuario = new Usuario("c","c","c","c");
-        usuarios.push(usuario);
-        localStorage.setItem('usuarios', JSON.stringify(usuarios));
     }
-    suspenderUsuario() {
-       
+    suspenderUsuario(username) {
+        usuarios.find(usuario => {
+            if (usuario.username == username) {
+                usuario.suspendido = true;
+                actualizarUsuarios();
+            }
+        });
     }
 
-    reactivarUsuario(){
-
+    reactivarUsuario(username) {
+        usuarios.find(usuario => {
+            if (usuario.username == username) {
+                usuario.suspendido = false;
+                actualizarUsuarios();
+            }
+        });
     }
-    eliminarUsuario(user) {        
-        localStorage.removeItem('usuarios', user);
-        cargarUsuarios();
+    eliminarUsuario(username) {
+        usuarios.find(usuario => {
+            if (usuario.username == username) {
+                eliminarItemArray(usuario);
+                actualizarUsuarios();
+            }
+        });
     }
 }
