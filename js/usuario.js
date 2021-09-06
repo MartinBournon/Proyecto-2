@@ -22,6 +22,9 @@ class Usuario {
     getAvatar() {
         return this.avatar;
     }
+    getSuspendido(){
+        return this.suspendido;
+    }
     setNombre(nombre) {
         this.nombre = nombre;
     }
@@ -35,36 +38,15 @@ class Usuario {
         this.suspendido = valor;
     }
 }
-class Administrador extends Usuario {
+
+class Administrador extends Usuario{
     constructor(username, password, nombre, email) {
         super(username, password, nombre, email);
     }
-    getUsuarios() {}
-    crearUsuario() {
+    suspenderUsuario(usuario) {
+        usuario.suspendido = true;
     }
-    suspenderUsuario(username) {
-        usuarios.find(usuario => {
-            if (usuario.username == username) {
-                usuario.suspendido = true;
-                actualizarUsuarios();
-            }
-        });
-    }
-
-    reactivarUsuario(username) {
-        usuarios.find(usuario => {
-            if (usuario.username == username) {
-                usuario.suspendido = false;
-                actualizarUsuarios();
-            }
-        });
-    }
-    eliminarUsuario(username) {
-        usuarios.find(usuario => {
-            if (usuario.username == username) {
-                eliminarItemArray(usuario);
-                actualizarUsuarios();
-            }
-        });
-    }
+    reactivarUsuario(usuario) {
+        usuario.suspendido = false;
+    }  
 }
