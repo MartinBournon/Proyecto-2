@@ -40,8 +40,8 @@
                         <div class="modal-body">
                             <div class="d-flex flex-column p-3">
                                 <label class="formModal__label" for="username">Username</label>
-                                <input class="formModal__input" type="text" id="username" name="username" maxlength="20"
-                                    >
+                                <input class="formModal__input" type="text" id="username" name="username"
+                                    maxlength="20" required>
                                 <label class="formModal__label" for="password">Password</label>
                                 <input class="formModal__input" type="password" id="password" name="password"
                                     maxlength="16" required>
@@ -51,7 +51,7 @@
 
                         </div>
                         <div class="modal-footer justify-content-evenly">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                            <button type="button" class="btn btn-secondary" id="btnCerrarLogin" data-bs-dismiss="modal">Cerrar</button>
                             <button type="submit" class="btn btn-primary" id="btnIngresar">Ingresar</button>
 
                         </div>
@@ -72,11 +72,11 @@
                                 <input class="formModal__input" type="text" id="nombre" name="nombre" maxlength="30"
                                     required>
                                 <label class="formModal__label" for="email">Email</label>
-                                <input class="formModal__input" type="email" id="email" name="email" maxlength="45"
+                                <input class="formModal__input" type="text" id="email" name="email" maxlength="45"
                                     required>
                                 <label class="formModal__label" for="usernameReg">Username</label>
                                 <input class="formModal__input" type="text" id="usernameReg" name="usernameReg"
-                                    maxlength="20" >
+                                    maxlength="20">
                                 <label class="formModal__label" for="passwordReg">Contraseña</label>
                                 <input class="formModal__input" type="password" id="passwordReg" name="passwordReg"
                                     maxlength="16" required>
@@ -92,7 +92,7 @@
                             </div>
                         </div>
                         <div class="modal-footer justify-content-evenly">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                            <button type="button" class="btn btn-secondary" id="btnCerrarReg" data-bs-dismiss="modal">Cerrar</button>
                             <button type="submit" class="btn btn-primary" id="btnRegistrar">Registrarse</button>
                         </div>
                     </form>
@@ -100,6 +100,25 @@
             </div>
         </div>
         <section>
+            <table>
+                <thead>
+                    <th>
+                        Username
+                    </th>
+                    <th>
+                        Password
+                    </th>
+                    <th>
+                        Nombre
+                    </th>
+                    <th>
+                        Email
+                    </th>
+                </thead>
+                <tbody id="listadoUsuarios">
+                    
+                </tbody>
+            </table>
 
         </section>
     </main>
@@ -112,8 +131,8 @@
     <script src="js/controller.js"></script>
     <script src="js/usuario.js"></script>
     <script src="js/controllerRegister.js"></script>
-    <script src="js/controllerLogin.js"></script>  
-    <script src="js/controllerAdmin.js"></script>  
+    <script src="js/controllerLogin.js"></script>
+    <script src="js/controllerAdmin.js"></script>
 </body>
 
 </html>

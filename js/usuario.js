@@ -6,6 +6,7 @@ class Usuario {
         this.email = email;
         this.avatar = '';
         this.suspendido = false;
+        this.seguidos = [];
     }
     getUsername() {
         return this.username;
@@ -22,7 +23,7 @@ class Usuario {
     getAvatar() {
         return this.avatar;
     }
-    getSuspendido(){
+    getSuspendido() {
         return this.suspendido;
     }
     setNombre(nombre) {
@@ -37,16 +38,26 @@ class Usuario {
     setSuspendido(valor) {
         this.suspendido = valor;
     }
-}
+    seguir(username) {
+        this.seguidos.push(username);
+    }
+    dejarSeguir(username) {
+        let i = this.seguidos.indexOf(username);
+        if (i !== -1) {
+            this.seguidos.splice(i, 1);
+        }
+        super.actualizarUsuarios();
+    }
 
-class Administrador extends Usuario{
+}
+class Administrador extends Usuario {
     constructor(username, password, nombre, email) {
         super(username, password, nombre, email);
     }
-    suspenderUsuario(usuario) {
+    suspender(usuario) {
         usuario.suspendido = true;
     }
-    reactivarUsuario(usuario) {
+    reactivar(usuario) {
         usuario.suspendido = false;
-    }  
+    }
 }
