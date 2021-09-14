@@ -9,7 +9,7 @@
   }
   
   .texto_principal__estilo {
-    width: 42ch;
+    width: 77ch;
     animation: typing 2s steps(22), blink .5s step-end infinite alternate;
     white-space: nowrap;
     overflow: hidden;
@@ -28,4 +28,8 @@
     50% {
       border-color: transparent
     }
+  }
+
+  button {
+      background-color: white;
   }
