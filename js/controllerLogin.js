@@ -1,7 +1,8 @@
+
 class ControllerLogin extends Controller {
     constructor() {
         super();
-        super.cargarUsuarios();
+        // this.cargarUsuarios();
         this.setListeners();
     }
     setListeners() {
@@ -18,14 +19,14 @@ class ControllerLogin extends Controller {
     validarLogin() {
         let username = document.querySelector('#username').value;
         let password = document.querySelector('#password');
-        super.delMsg();
-        super.getUsuarios().find(element => {
-            if (element.username === username &&
-                element.password === password.value &&
-                element.suspendido === false) {
+        this.delMsg();
+        this.getUsuarios().find(element => {
+            if (element.getUsername() === username &&
+                element.getPassword() === password.value &&
+                element.getSuspendido() === false) {
                 return this.login(username);
             } else {
-                return super.addMsgAfter("Usuario o contraseña incorrectos", password);
+                return this.addMsgAfter("Usuario o contraseña incorrectos", password);
             }
         });
     }
@@ -34,9 +35,10 @@ class ControllerLogin extends Controller {
         location.href = "comunidad.html";
     }
     limpiarVentana() {
-        super.delMsg();
+        this.delMsg();
         document.querySelector("#username").value = "";
         document.querySelector("#password").value = "";
     }
 }
+
 let controllerLogin = new ControllerLogin();

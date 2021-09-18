@@ -2,35 +2,35 @@ class ControllerAdmin extends Controller {
     constructor(admin) {
         super();
         this.admin = admin;
-        super.cargarUsuarios();
+        // this.cargarUsuarios();
         this.listarUsuarios();
     }
     suspenderUsuario(username) {
         this.admin.suspender(
-            super.buscarUsuario(username));
-        super.actualizarUsuarios();
+            this.buscarUsuario(username));
+        this.actualizarUsuarios();
     }
     reactivarUsuario(username) {
         this.admin.reactivar(
-            super.buscarUsuario(username));
-        super.actualizarUsuarios();
+            this.buscarUsuario(username));
+        this.actualizarUsuarios();
     }
     eliminarUsuario(username) {
-        let i = super.usuarios.indexOf(username);
+        let i = this.usuarios.indexOf(username);
         if (i !== -1) {
-            super.usuarios.splice(i, 1);
+            this.usuarios.splice(i, 1);
         }
-        super.actualizarUsuarios();
+        this.actualizarUsuarios();
     }
     listarUsuarios() {
-        const usuarios = super.getUsuarios();
+        const usuarios = this.getUsuarios();
         let listadoUsuarios = document.querySelector("#listadoUsuarios");
         usuarios.forEach(element => {        
             let row = document.createElement("tr");
-            row.appendChild(this.crearTd(element.username));
-            row.appendChild(this.crearTd(element.password));
-            row.appendChild(this.crearTd(element.nombre));
-            row.appendChild(this.crearTd(element.email));
+            row.appendChild(this.crearTd(element.getUsername()));
+            row.appendChild(this.crearTd(element.getPassword()));
+            row.appendChild(this.crearTd(element.getNombre()));
+            row.appendChild(this.crearTd(element.getEmail()));
             listadoUsuarios.appendChild(row);
         });
 
@@ -41,5 +41,3 @@ class ControllerAdmin extends Controller {
         return td;
     }
 }
-let aa = new Administrador("a", "a", "a", "a");
-let a = new ControllerAdmin(aa);

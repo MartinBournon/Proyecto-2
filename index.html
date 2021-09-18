@@ -40,8 +40,8 @@
                         <div class="modal-body">
                             <div class="d-flex flex-column p-3">
                                 <label class="formModal__label" for="username">Username</label>
-                                <input class="formModal__input" type="text" id="username" name="username"
-                                    maxlength="20" required>
+                                <input class="formModal__input" type="text" id="username" name="username" maxlength="20"
+                                    required>
                                 <label class="formModal__label" for="password">Password</label>
                                 <input class="formModal__input" type="password" id="password" name="password"
                                     maxlength="16" required>
@@ -51,7 +51,8 @@
 
                         </div>
                         <div class="modal-footer justify-content-evenly">
-                            <button type="button" class="btn btn-secondary" id="btnCerrarLogin" data-bs-dismiss="modal">Cerrar</button>
+                            <button type="button" class="btn btn-secondary" id="btnCerrarLogin"
+                                data-bs-dismiss="modal">Cerrar</button>
                             <button type="submit" class="btn btn-primary" id="btnIngresar">Ingresar</button>
 
                         </div>
@@ -92,7 +93,8 @@
                             </div>
                         </div>
                         <div class="modal-footer justify-content-evenly">
-                            <button type="button" class="btn btn-secondary" id="btnCerrarReg" data-bs-dismiss="modal">Cerrar</button>
+                            <button type="button" class="btn btn-secondary" id="btnCerrarReg"
+                                data-bs-dismiss="modal">Cerrar</button>
                             <button type="submit" class="btn btn-primary" id="btnRegistrar">Registrarse</button>
                         </div>
                     </form>
@@ -116,9 +118,12 @@
                     </th>
                 </thead>
                 <tbody id="listadoUsuarios">
-                    
+
                 </tbody>
             </table>
+            <!-- <audio id="audio" src='./js/Ahora.mp3'>asdasdasdasd</audio> -->
+
+
 
         </section>
     </main>
@@ -128,11 +133,36 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous">
     </script>
-    <script src="js/controller.js"></script>
-    <script src="js/usuario.js"></script>
+    <script src="js/usuario.js"></script>d
+    <script src="js/controller.js"></script>d
     <script src="js/controllerRegister.js"></script>
     <script src="js/controllerLogin.js"></script>
     <script src="js/controllerAdmin.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.1/howler.min.js"></script>
+    <!-- <script>
+        const sound = new Howl({
+            src: ['./js/Ahora.mp3'],
+            volume: 1.0,
+            onend: function () {
+                alert('We finished with the setup!');
+            }
+        });
+         sound.play()
+    
+    </script>
+    <script src="https://sdk.scdn.co/spotify-player.js"></script>
+    <script>
+        window.onSpotifyWebPlaybackSDKReady = () => {
+            const userAccessToken = "21hizraqnikimzfd2chqq4ndi";
+            const webPlayback = new Spotify.Player({
+                name: "Spotify Web Playback SDK",
+                getOAuthToken: callback => {
+                    callback(userAccessToken)
+                }
+            });
+            webPlayback.connect();
+        };
+    </script> -->
 </body>
 
 </html>

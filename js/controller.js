@@ -1,27 +1,35 @@
+
 class Controller {
     constructor() {
         this.usuarios = this.cargarUsuarios();
-        this.gruposMusicales = this.cargarGruposMusicales();
+        // this.gruposMusicales = this.cargarGruposMusicales();
     }
     getUsuarios() {
         return this.usuarios;
     }
     cargarUsuarios() {
+        let arrayObjetos = [];
         if (!localStorage.getItem('usuarios')) {
             return this.usuarios = [];
-        } else {
+        } else {            
             let usuarios = localStorage.getItem('usuarios');
-            return this.usuarios = JSON.parse(usuarios);
+            usuarios = JSON.parse(usuarios);            
+            usuarios.forEach( user => {
+                const usuario = new Usuario(user.username, user.password, 
+                    user.nombre, user.email);
+                arrayObjetos.push(usuario);
+            });
+            return arrayObjetos;
         }
     }
-    cargarGruposMusicales() {
-        if (!localStorage.getItem('gruposMusicales')) {
-            return this.gruposMusicales = [];
-        } else {
-            let gruposMusicales = localStorage.getItem('gruposMusicales');
-            return this.gruposMusicales = JSON.parse(gruposMusicales);
-        }
-    }
+    // cargarGruposMusicales() {
+    //     if (!localStorage.getItem('gruposMusicales')) {
+    //         return this.gruposMusicales = [];
+    //     } else {
+    //         let gruposMusicales = localStorage.getItem('gruposMusicales');
+    //         return this.gruposMusicales = JSON.parse(gruposMusicales);
+    //     }
+    // }
     buscarUsuario(username) {
         let user;
         this.getUsuarios().find(usuario => {
