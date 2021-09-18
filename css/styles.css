@@ -1,3 +1,4 @@
+
 /* pagina 404 */
 
 
@@ -36,3 +37,130 @@
   button {
       background-color: white;
   }
+
+body {
+    color: black;
+    background-color: black;
+
+}
+
+/* comienza el css de la seccion " mi musica "*/
+
+/*barra de busqueda*/
+
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    border-radius: 12px;
+    background-color: black;
+}
+img {
+    border-radius: 50%;
+}
+
+/*usuarios efectos*/
+
+.usuarios_recomendados {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+.usuario {
+    transition: transform .5s;
+}
+
+.usuario:hover,
+.tarjeta_avatar:hover {
+    transform: scale(1.1);
+}
+
+.tarjeta_avatar {
+    display: flex;
+    justify-content: space-between;
+    transition: transform .5s;
+    margin-left: 100px;
+}
+
+.titular,
+.tarjeta_historial {
+    display: flex;
+    justify-content: center;
+    background-color: rgba(226, 129, 19, 0.568);
+    font-size: larger;
+    font: 400;
+}
+
+
+/* avatar */
+
+.contenedor {
+    margin-top: 20px;
+    width: 100%;
+    height: 30vh;
+}
+
+.avatar {
+    position: relative;
+    height: 250px;
+    cursor: pointer;
+    width: 350px;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.30);
+}
+
+.avatar__img {
+    width: 100%;
+    height: 100%;
+    transition: all 400ms ease-out;
+    will-change: transform;
+}
+
+.capa {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(136, 101, 61, 0.4);
+    transition: all 400ms ease-out;
+    opacity: 0;
+    visibility: hidden;
+    text-align: center;
+}
+
+.avatar:hover .capa {
+    opacity: 2;
+    visibility: visible;
+}
+
+.avatar:hover> .capa__nombre {
+    margin-top: 70px;
+    margin-bottom: 15px;
+}
+
+.avatar:hover> .avatar__img {
+    transform: scale(1.3);
+}
+
+
+
+.capa__nombre {
+    color: #fff;
+    font-weight: 400;
+    margin-bottom: 120px;
+    transition: all 400ms ease-out;
+    margin-top: 30px;
+}
+
+.capa__contenido {
+    color: #fff;
+    font-size: 15px;
+    line-height: 1.5;
+    width: 100%;
+    max-width: 220px;
+    margin: auto;
+}
+

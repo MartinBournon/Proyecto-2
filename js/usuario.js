@@ -1,13 +1,14 @@
 class Usuario {
-    constructor(user, password, nombre, email) {
-        this.user = user;
+    constructor(username, password, nombre, email) {
+        this.username = username;
         this.password = password;
         this.nombre = nombre;
         this.email = email;
         this.avatar = '';
+        this.suspendido = false;
     }
-    getUser() {
-        return this.user;
+    getUsername() {
+        return this.username;
     }
     getPassword() {
         return this.password;
@@ -30,21 +31,40 @@ class Usuario {
     setAvatar(avatar) {
         this.avatar = avatar;
     }
+    setSuspendido(valor) {
+        this.suspendido = valor;
+    }
 }
 class Administrador extends Usuario {
-    constructor(user, password, nombre, email) {
-        super(user, password, nombre, email);
+    constructor(username, password, nombre, email) {
+        super(username, password, nombre, email);
     }
-    listarUsuarios() {
-
-    }
+    getUsuarios() {}
     crearUsuario() {
-
     }
-    suspenderUsuario() {
-
+    suspenderUsuario(username) {
+        usuarios.find(usuario => {
+            if (usuario.username == username) {
+                usuario.suspendido = true;
+                actualizarUsuarios();
+            }
+        });
     }
-    eliminarUsuario() {
 
+    reactivarUsuario(username) {
+        usuarios.find(usuario => {
+            if (usuario.username == username) {
+                usuario.suspendido = false;
+                actualizarUsuarios();
+            }
+        });
+    }
+    eliminarUsuario(username) {
+        usuarios.find(usuario => {
+            if (usuario.username == username) {
+                eliminarItemArray(usuario);
+                actualizarUsuarios();
+            }
+        });
     }
 }
