@@ -26,6 +26,7 @@ class ControllerRegister extends Controller {
         let nombre = document.querySelector("#nombre").value;
         let email = document.querySelector("#email");
         let b = false;
+        console.log("Validar Registro Usuarios");
         this.delMsg();        
         if (username.value === '' || username.value.length === 0) {
             this.addMsgAfter("Username can't be empty", username);
@@ -38,7 +39,7 @@ class ControllerRegister extends Controller {
             this.addMsgAfter("This username is already in use", username);
             b = true;
         }
-        if (!REGEXPASSWORD.test(password) && password != password2.value) {
+        if (!REGEXPASSWORD.test(password) || (password != password2.value)) {
             this.addMsgAfter("Both password must be the same and must " +
                 "have unless one uppercase, one lowercase and one number", password2);
                 b = true;
@@ -52,9 +53,12 @@ class ControllerRegister extends Controller {
         }
     }
     registrar(username, password, nombre, email) {
+        console.log("Registrar Usuarios");
         let usuario = new Usuario(username, password, nombre, email);
         this.getUsuarios().push(usuario);
         this.actualizarUsuarios();
+        this.delMsg();
+        this.limpiarVentana();
     }
     limpiarVentana() {
         this.delMsg();
@@ -66,3 +70,5 @@ class ControllerRegister extends Controller {
         document.querySelector("#aceptoCond").checked = false;
     }
 }
+
+let contReg = new ControllerRegister();

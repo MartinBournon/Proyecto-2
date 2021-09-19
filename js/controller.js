@@ -8,18 +8,13 @@ class Controller {
         return this.usuarios;
     }
     cargarUsuarios() {
-        let arrayObjetos = [];
         if (!localStorage.getItem('usuarios')) {
             return this.usuarios = [];
         } else {            
+            console.log("Cargar Usuarios");
             let usuarios = localStorage.getItem('usuarios');
-            usuarios = JSON.parse(usuarios);            
-            usuarios.forEach( user => {
-                const usuario = new Usuario(user.username, user.password, 
-                    user.nombre, user.email);
-                arrayObjetos.push(usuario);
-            });
-            return arrayObjetos;
+            usuarios = JSON.parse(usuarios);        
+            return usuarios;
         }
     }
     // cargarGruposMusicales() {

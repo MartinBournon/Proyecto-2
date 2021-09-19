@@ -1,8 +1,8 @@
-
 class ControllerLogin extends Controller {
     constructor() {
         super();
         // this.cargarUsuarios();
+        console.log("hola");
         this.setListeners();
     }
     setListeners() {
@@ -19,12 +19,13 @@ class ControllerLogin extends Controller {
     validarLogin() {
         let username = document.querySelector('#username').value;
         let password = document.querySelector('#password');
+        console.log("hola");
         this.delMsg();
         this.getUsuarios().find(element => {
-            if (element.getUsername() === username &&
-                element.getPassword() === password.value &&
-                element.getSuspendido() === false) {
-                return this.login(username);
+            if (element.username === username &&
+                element.password === password.value &&
+                element.suspendido === false) {
+                return this.login(element);
             } else {
                 return this.addMsgAfter("Usuario o contraseña incorrectos", password);
             }
