@@ -1,4 +1,3 @@
-
 class Controller {
     constructor() {
         this.usuarios = this.cargarUsuarios();
@@ -8,12 +7,14 @@ class Controller {
         return this.usuarios;
     }
     cargarUsuarios() {
+        let usuarios = [];
         if (!localStorage.getItem('usuarios')) {
-            return this.usuarios = [];
-        } else {            
+            return usuarios;
+        } else {
             console.log("Cargar Usuarios");
-            let usuarios = localStorage.getItem('usuarios');
-            usuarios = JSON.parse(usuarios);        
+            usuarios = localStorage.getItem('usuarios');
+            usuarios = JSON.parse(usuarios);
+            console.log(usuarios);
             return usuarios;
         }
     }
@@ -26,18 +27,17 @@ class Controller {
     //     }
     // }
     buscarUsuario(username) {
-        let user;
-        this.getUsuarios().find(usuario => {
+        return this.usuarios.find(usuario => {
             if (usuario.username == username) {
-                user = usuario;
+                return usuario;
             } else {
-                user = null;
+                return null;
             }
         });
-        return user;
     }
     actualizarUsuarios() {
         localStorage.setItem('usuarios', JSON.stringify(this.usuarios));
+        console.log(this.usuarios);
     }
     addMsgAfter(msg, afterMe) {
         let p = document.createElement('p');

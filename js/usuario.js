@@ -79,10 +79,4 @@ class Administrador extends Usuario {
     constructor(username, password, nombre, email) {
         super(username, password, nombre, email);
     }
-    suspender(usuario) {
-        usuario.suspendido = true;
-    }
-    reactivar(usuario) {
-        usuario.suspendido = false;
-    }
 }

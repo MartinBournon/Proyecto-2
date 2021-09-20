@@ -1,171 +1,3 @@
-/* pagina 404 */
-*{
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
-.contenedor {
-    height: 80vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-.texto_principal__estilo {
-    width: 77ch;
-    animation: typing 2s steps(22), blink .5s step-end infinite alternate;
-    white-space: nowrap;
-    overflow: hidden;
-    border-right: 3px solid;
-    font-family: monospace;
-    font-size: 1.5em;
-}
-
-@keyframes typing {
-    from {
-        width: 0
-    }
-}
-
-@keyframes blink {
-    50% {
-        border-color: transparent
-    }
-}
-
-button {
-    background-color: white;
-}
-
-body {
-    /* color: black;
-    background-color: black; */
-}
-
-
-/* comienza el css de la seccion " mi musica "*/
-
-
-/*barra de busqueda*/
-
-.navbar {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    border-radius: 12px;
-    background-color: black;
-}
-
-img {
-    max-width: 100%;
-    /* border-radius: 50%; */
-}
-
-
-/*usuarios efectos*/
-
-.usuarios_recomendados {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 30px;
-}
-
-.usuario {
-    transition: transform .5s;
-}
-
-.usuario:hover,
-.tarjeta_avatar:hover {
-    transform: scale(1.1);
-}
-
-.tarjeta_avatar {
-    display: flex;
-    justify-content: space-between;
-    transition: transform .5s;
-    margin-left: 100px;
-}
-
-.titular,
-.tarjeta_historial {
-    display: flex;
-    justify-content: center;
-    background-color: rgba(226, 129, 19, 0.568);
-    font-size: larger;
-    font: 400;
-}
-
-
-/* avatar */
-
-.contenedor {
-    margin-top: 20px;
-    width: 100%;
-    height: 30vh;
-}
-
-.avatar {
-    position: relative;
-    height: 250px;
-    cursor: pointer;
-    width: 350px;
-    overflow: hidden;
-    border-radius: 10px;
-    box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.30);
-}
-
-.avatar__img {
-    width: 100%;
-    height: 100%;
-    transition: all 400ms ease-out;
-    will-change: transform;
-}
-
-.capa {
-    position: absolute;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(136, 101, 61, 0.4);
-    transition: all 400ms ease-out;
-    opacity: 0;
-    visibility: hidden;
-    text-align: center;
-}
-
-.avatar:hover .capa {
-    opacity: 2;
-    visibility: visible;
-}
-
-.avatar:hover>.capa__nombre {
-    margin-top: 70px;
-    margin-bottom: 15px;
-}
-
-.avatar:hover>.avatar__img {
-    transform: scale(1.3);
-}
-
-.capa__nombre {
-    color: #fff;
-    font-weight: 400;
-    margin-bottom: 120px;
-    transition: all 400ms ease-out;
-    margin-top: 30px;
-}
-
-.capa__contenido {
-    color: #fff;
-    font-size: 15px;
-    line-height: 1.5;
-    width: 100%;
-    max-width: 220px;
-    margin: auto;
-}
-
-
 /*ESTILOS DE NAV BAR*/
 
 @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
@@ -205,7 +37,7 @@ img {
 
 .sidebar {
     position: fixed;
-    z-index: 20;
+    z-index: 10;
     width: 250px;
     height: 100%;
     left: -250px;
@@ -337,22 +169,13 @@ nav ul li a span.rotate {
 
 /*ESTILOS DE WAVE*/
 
-@keyframes mygradient {
-    0% {
-        background-position: 0%
-    }
-
-    100% {
-        background-position: 100%
-    }
-}
-
 .body__Wave {
     margin: 0px;
     background: linear-gradient(90deg, rgb(245, 127, 23), rgb(233, 30, 99), rgb(156, 39, 176), rgb(63, 81, 181));
-    height: 100%;
-    width: 100vw;
-    background-size: contain;
+    max-height:max-content;
+    width: 100%;
+    background-size:contain;
+    background-repeat: no-repeat;
 }
 
 /*FIN ESTILOS DE WAVE*/
@@ -393,12 +216,10 @@ main{
     background-color:rgb(248, 247, 247);
 }
 
-.section__Groups {
-    padding: 4rem;
-    text-align: center;
-    
+.contenedor__Informacion{
+    background-color:rgb(248, 247, 247);
 }
 
-.section__Groups h2 {
-    margin-bottom: 2rem;
+.contenedorAvatar__img{
+border-radius: 50%;
 }
