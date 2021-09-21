@@ -1,8 +1,6 @@
 class ControllerLogin extends Controller {
     constructor() {
         super();
-        // this.cargarUsuarios();
-        console.log("hola");
         this.setListeners();
     }
     setListeners() {
@@ -19,7 +17,6 @@ class ControllerLogin extends Controller {
     validarLogin() {
         let username = document.querySelector('#username').value;
         let password = document.querySelector('#password');
-        console.log("hola");
         this.delMsg();
         this.getUsuarios().find(element => {
             if (element.username === username &&
@@ -31,9 +28,11 @@ class ControllerLogin extends Controller {
             }
         });
     }
-    login(username) {
-        localStorage.setItem('usuarioLogueado', username);
-        location.href = "comunidad.html";
+    login(usuario) {
+        console.log("HELA");
+        let usuarioLogueado = {usuario : usuario.username, permiso : usuario.permiso };
+        localStorage.setItem('usuarioLogueado', JSON.stringify(usuarioLogueado));
+        location.href = "index.html";
     }
     limpiarVentana() {
         this.delMsg();

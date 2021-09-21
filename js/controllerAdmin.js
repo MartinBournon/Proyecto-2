@@ -1,8 +1,6 @@
 class ControllerAdmin extends Controller {
     constructor() {
         super();
-        // this.admin = admin;
-        // this.cargarUsuarios();
         this.listarUsuarios();
         this.setListeners();
     }
@@ -12,10 +10,7 @@ class ControllerAdmin extends Controller {
             element.addEventListener("click", (event) => {
                 let td = event.target.parentNode;
                 let tr = td.parentNode;
-                console.log(tr.cells[3].className);
-                if (tr.cells[3].className == 'btnSuspender') {
-                    this.suspenderUsuario(tr.cells[0].textContent);
-                }
+                this.cambiarEstadoSuspension(tr.cells[0].textContent);
             });
         });
         const btnEliminar = document.querySelectorAll(".btnEliminar");
@@ -23,22 +18,36 @@ class ControllerAdmin extends Controller {
             element.addEventListener("click", (event) => {
                 let td = event.target.parentNode;
                 let tr = td.parentNode;
+                this.eliminarUsuario(tr.cells[0].textContent);
                 tr.parentNode.removeChild(tr);
-
-                this.eliminarUsuario();
             });
         });
     }
-    suspenderUsuario(username) {
-        this.buscarUsuario(username).suspendido = true;
+    cambiarEstadoSuspension(username) {
+        let usuario = this.buscarUsuario(username);
+        if (usuario.suspendido) {
+            usuario.suspendido = false;
+        } else {
+            usuario.suspendido = true;
+        }        
         this.actualizarUsuarios();
+        this.actualizarTabla();        
     }
-    reactivarUsuario(username) {
-        this.buscarUsuario(username).suspendido = false;
-        this.actualizarUsuarios();
+    // suspenderUsuario(username) {
+    //     this.buscarUsuario(username).suspendido = true;
+    //     this.actualizarUsuarios();
+    // }
+    // reactivarUsuario(username) {
+    //     this.buscarUsuario(username).suspendido = false;
+    //     this.actualizarUsuarios();
+    // }
+    actualizarTabla(){
+        document.querySelector("#listadoUsuarios").innerHTML= "";
+        this.listarUsuarios();
+        this.setListeners();
     }
     eliminarUsuario(username) {
-        let i = this.usuarios.indexOf(username);
+        let i = this.usuarios.findIndex(usuario => usuario.username === username);
         if (i !== -1) {
             this.usuarios.splice(i, 1);
         }

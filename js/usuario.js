@@ -1,15 +1,14 @@
 class Usuario {
-    constructor(username, password, nombre, email) {
+    constructor(username, password, email) {
         this.username = username;
         this.password = password;
-        // this.nombre = nombre;
         this.email = email;
         this.avatar = "";
         this.pais = "";
         this.fechaNacimiento = "";
-        this.idioma = "";
+        this.idioma = "en";
         this.suspendido = false;
-        this.seguidos = [];
+        this.permiso = 1;
     }
     getUsername() {
         return this.username;
@@ -17,9 +16,6 @@ class Usuario {
     getPassword() {
         return this.password;
     }
-    // getNombre() {
-    //     return this.nombre;
-    // }
     getEmail() {
         return this.email;
     }
@@ -38,9 +34,6 @@ class Usuario {
     getSuspendido() {
         return this.suspendido;
     }
-    // setNombre(nombre) {
-    //     this.nombre = nombre;
-    // }
     setPassword(password) {
         this.password = password;
     }

@@ -1,7 +1,7 @@
 class Controller {
     constructor() {
         this.usuarios = this.cargarUsuarios();
-        // this.gruposMusicales = this.cargarGruposMusicales();
+        // localStorage.clear();
     }
     getUsuarios() {
         return this.usuarios;
@@ -11,10 +11,8 @@ class Controller {
         if (!localStorage.getItem('usuarios')) {
             return usuarios;
         } else {
-            console.log("Cargar Usuarios");
             usuarios = localStorage.getItem('usuarios');
             usuarios = JSON.parse(usuarios);
-            console.log(usuarios);
             return usuarios;
         }
     }
@@ -37,7 +35,6 @@ class Controller {
     }
     actualizarUsuarios() {
         localStorage.setItem('usuarios', JSON.stringify(this.usuarios));
-        console.log(this.usuarios);
     }
     addMsgAfter(msg, afterMe) {
         let p = document.createElement('p');

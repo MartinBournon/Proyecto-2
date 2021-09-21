@@ -1,8 +1,6 @@
-
 class ControllerRegister extends Controller {
     constructor() {
         super();
-        // this.cargarUsuarios();
         this.setListeners();
     }
     setListeners() {
@@ -23,7 +21,7 @@ class ControllerRegister extends Controller {
         let username = document.querySelector("#usernameReg");
         let password = document.querySelector("#passwordReg").value;
         let password2 = document.querySelector("#passwordReg2");
-        let nombre = document.querySelector("#nombre").value;
+        let nombre = document.querySelector("#name").value;
         let email = document.querySelector("#email");
         let b = false;
         console.log("Validar Registro Usuarios");
@@ -49,12 +47,12 @@ class ControllerRegister extends Controller {
             b = true;
         }
         if(!b){
-            this.registrar(username.value,password,nombre,email.value);
+            this.registrar(username.value,password,email.value);
         }
     }
-    registrar(username, password, nombre, email) {
+    registrar(username, password, email) {
         console.log("Registrar Usuarios");
-        let usuario = new Usuario(username, password, nombre, email);
+        let usuario = new Usuario(username, password, email);
         this.getUsuarios().push(usuario);
         this.actualizarUsuarios();
         this.delMsg();
@@ -63,7 +61,6 @@ class ControllerRegister extends Controller {
     limpiarVentana() {
         this.delMsg();
         let inputs = document.querySelectorAll("#formRegistrar .formModal__input");
-        console.log(inputs);
         inputs.forEach(element => {
             element.value = "";
         });
