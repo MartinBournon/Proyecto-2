@@ -1,15 +1,14 @@
 class Usuario {
-    constructor(username, password, nombre, email) {
+    constructor(username, password, email) {
         this.username = username;
         this.password = password;
-        // this.nombre = nombre;
         this.email = email;
         this.avatar = "";
         this.pais = "";
         this.fechaNacimiento = "";
-        this.idioma = "";
+        this.idioma = "en";
         this.suspendido = false;
-        this.seguidos = [];
+        this.permiso = 1;
     }
     getUsername() {
         return this.username;
@@ -17,9 +16,6 @@ class Usuario {
     getPassword() {
         return this.password;
     }
-    // getNombre() {
-    //     return this.nombre;
-    // }
     getEmail() {
         return this.email;
     }
@@ -38,9 +34,9 @@ class Usuario {
     getSuspendido() {
         return this.suspendido;
     }
-    // setNombre(nombre) {
-    //     this.nombre = nombre;
-    // }
+    getPermiso(){
+        return this.permiso;
+    }
     setPassword(password) {
         this.password = password;
     }
@@ -62,27 +58,14 @@ class Usuario {
     setSuspendido(valor) {
         this.suspendido = valor;
     }
-    seguir(username) {
-        this.seguidos.push(username);
+    setPermiso(valor){
+        this.permiso = valor;
     }
-    dejarSeguir(username) {
-        let i = this.seguidos.indexOf(username);
-        if (i !== -1) {
-            this.seguidos.splice(i, 1);
-        }
-        super.actualizarUsuarios();
-    }
-
-
 }
 class Administrador extends Usuario {
-    constructor(username, password, nombre, email) {
-        super(username, password, nombre, email);
-    }
-    suspender(usuario) {
-        usuario.suspendido = true;
-    }
-    reactivar(usuario) {
-        usuario.suspendido = false;
+    constructor(username, password, email) {
+        super(username, password, email);
+        this.permiso = 2;
     }
 }
+

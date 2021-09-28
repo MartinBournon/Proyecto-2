@@ -1,3 +1,5 @@
+/*ESTILOS DE NAV BAR*/
+
 @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
 
 * {
@@ -162,6 +164,11 @@ nav ul li a span.rotate {
     text-align: center
 }
 
+/*FIN DE ESTILOS DE NAVBAR*/
+
+
+/*BAGGROUND GRADIENT*/
+
 body {
     background: linear-gradient(-45deg, #ee7752, #e73c7e, #6c3fd3, #4d037e);
     background-size: 400% 400%;
@@ -183,6 +190,11 @@ body {
         background-position: 0% 50%;
     }
 }
+
+
+
+/*BAGGROUND GRADIENT*/
+
 
 .container_Logo {
     margin-bottom: 70px;
@@ -215,7 +227,7 @@ main {
     z-index: -999;
 }
 
-.musicGroup {
+.music__Group {
     margin: 0px;
     justify-content: center;
     align-items: center;
@@ -238,14 +250,10 @@ main {
     max-width: 100px;
 }
 
-.avatar__Group {
-    border-radius: 50%;
-}
-
 @media (min-width: 768px) {
     .avatar {
         max-width: 200px;
-    }
+    }    
 }
 
 .avatar__img {
@@ -253,26 +261,17 @@ main {
     width: 100%;
 }
 
-.image__Group {
-    height: 200px;
-}
 
 
 .tablaListadoUsuarios {
     table-layout: fixed;
     width: 100%;
     border-collapse: collapse;
-}
-
-table {
-    overflow-x: auto;
-    display: block;
-    width: fit-content;
-    box-shadow: 0 0 1px 1px rgba(0, 0, 0, .1);
+    border: 2px solid black;
 }
 
 .tablaListadoUsuarios thead th:nth-child(1) {
-    width: 40%;
+    width: 30%;
 }
 
 .tablaListadoUsuarios thead th:nth-child(2) {
@@ -301,108 +300,45 @@ td {
     background-color: gray;
 }
 
-.titulos {
+.adminPanel__titulo {
     padding-top: 50px;
 }
-
-.tablaListadoUsuarios {
+.tablaListadoUsuarios{
     margin-top: 40px;
 }
 
 
-.contenedorAvatar__img {
-    margin: 10px 0 10px 0;
-    box-shadow: 0 0 5px 10px rgba(0, 0, 0, 0.2);
+.accountSettings__titulo{
+    padding-top: 50px;
 }
 
-.accountSettings__label {
+.contenedorAvatar__img{
+    margin: 10px 0 10px 0;
+    box-shadow: 0 0 5px 10px rgba(0,0,0,0.2);
+}
+
+.accountSettings__label{
     font-size: 20px;
 }
 
-.accountSettings__inputs {
+.accountSettings__inputs{
     margin-bottom: 5px;
 }
 
-.accountSettings__btnGuardarCambios {
+.accountSettings__btnGuardarCambios{
     margin: 15px 0;
 }
 
-.footer {
+.footer{
     margin-top: 50px;
 }
 
-a {
+
+/* .darkMode{
+    background-color: black;
+    color: white;
+}
+.lightMode{
+    background-color: white;
     color: black;
-    text-decoration: none;
-    background-color: transparent;
-    background: transparent;
-}
-
-td,
-th {
-    border: solid rgb(200, 200, 200) 1px;
-    padding: .5rem;
-}
-
-th {
-    text-align: left;
-    background-color: rgb(190, 220, 250);
-    text-transform: uppercase;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-    border-bottom: rgb(50, 50, 100) solid 2px;
-    border-top: none;
-}
-
-td {
-    white-space: nowrap;
-    border-bottom: none;
-    color: rgb(20, 20, 20);
-}
-
-td:first-of-type,
-th:first-of-type {
-    border-left: none;
-}
-
-td:last-of-type,
-th:last-of-type {
-    border-right: none;
-}
-
-.card {
-    border-radius: 30px;
-}
-
-.card-body {
-    margin: 0;
-    padding: 0;
-    justify-content: center;
-    border-radius: 30px;
-}
-
-.contenedorFavorito {
-    width: 300px;
-    margin-bottom: 10px;
-}
-
-.mensaje404 {
-    font-size: 70px;
-    text-align: center;
-}
-
-.contenedorStar {
-    width: 80px;
-}
-
-.contenedorStar img {
-    width: 100%;
-}
-
-.musicGroup__tema{
-    margin: 0;
-}
-
-.musicGroup__audio{
-    margin: 10px 0;
-}
+} */
