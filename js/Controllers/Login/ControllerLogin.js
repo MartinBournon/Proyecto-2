@@ -42,7 +42,7 @@ class ControllerLogin extends Controller {
             username: usuario.username,
             permiso: usuario.permiso,
         };
-        localStorage.setItem('usuarioLogueado', JSON.stringify(usuarioLogueado));
+        sessionStorage.setItem('usuarioLogueado', JSON.stringify(usuarioLogueado));
         if(usuario.permiso === 2){
             location.href = "adminpanel.html";
         }else{

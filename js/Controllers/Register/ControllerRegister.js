@@ -21,7 +21,6 @@ class ControllerRegister extends Controller {
         let username = document.querySelector("#usernameReg");
         let password = document.querySelector("#passwordReg").value;
         let password2 = document.querySelector("#passwordReg2");
-        let nombre = document.querySelector("#name").value;
         let email = document.querySelector("#email");
         let b = false;
         console.log("Validar Registro Usuarios");

@@ -1,5 +1,3 @@
-/*ESTILOS DE NAV BAR*/
-
 @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
 
 * {
@@ -164,11 +162,6 @@ nav ul li a span.rotate {
     text-align: center
 }
 
-/*FIN DE ESTILOS DE NAVBAR*/
-
-
-/*BAGGROUND GRADIENT*/
-
 body {
     background: linear-gradient(-45deg, #ee7752, #e73c7e, #6c3fd3, #4d037e);
     background-size: 400% 400%;
@@ -190,11 +183,6 @@ body {
         background-position: 0% 50%;
     }
 }
-
-
-
-/*BAGGROUND GRADIENT*/
-
 
 .container_Logo {
     margin-bottom: 70px;
@@ -227,7 +215,7 @@ main {
     z-index: -999;
 }
 
-.music__Group {
+.musicGroup {
     margin: 0px;
     justify-content: center;
     align-items: center;
@@ -250,6 +238,10 @@ main {
     max-width: 100px;
 }
 
+.avatar__Group {
+    border-radius: 50%;
+}
+
 @media (min-width: 768px) {
     .avatar {
         max-width: 200px;
@@ -261,22 +253,21 @@ main {
     width: 100%;
 }
 
+.image__Group {
+    height: 200px;
+}
 
 
 .tablaListadoUsuarios {
     table-layout: fixed;
     width: 100%;
     border-collapse: collapse;
-    /* border: 2px solid black; */
 }
 
 table {
-    /* margin: auto; */
-    /* border-collapse: collapse; */
     overflow-x: auto;
     display: block;
     width: fit-content;
-    /* max-width: 100%; */
     box-shadow: 0 0 1px 1px rgba(0, 0, 0, .1);
 }
 
@@ -310,9 +301,10 @@ td {
     background-color: gray;
 }
 
-.titulos{
+.titulos {
     padding-top: 50px;
 }
+
 .tablaListadoUsuarios {
     margin-top: 40px;
 }
@@ -339,17 +331,12 @@ td {
     margin-top: 50px;
 }
 
-
-/* .darkMode{
-    background-color: black;
-    color: white;
-}
-.lightMode{
-    background-color: white;
+a {
     color: black;
-} */
-
-
+    text-decoration: none;
+    background-color: transparent;
+    background: transparent;
+}
 
 td,
 th {
@@ -383,20 +370,39 @@ th:last-of-type {
     border-right: none;
 }
 
-.card{
+.card {
     border-radius: 30px;
 }
-.card-body{
+
+.card-body {
     margin: 0;
     padding: 0;
     justify-content: center;
     border-radius: 30px;
 }
-.contenedorFavorito{
+
+.contenedorFavorito {
     width: 300px;
     margin-bottom: 10px;
 }
 
-audio{
+.mensaje404 {
+    font-size: 70px;
+    text-align: center;
+}
+
+.contenedorStar {
+    width: 80px;
+}
+
+.contenedorStar img {
     width: 100%;
+}
+
+.musicGroup__tema{
+    margin: 0;
+}
+
+.musicGroup__audio{
+    margin: 10px 0;
 }

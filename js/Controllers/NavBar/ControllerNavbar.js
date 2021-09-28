@@ -13,14 +13,14 @@ class ControllerNavbar {
     }
 
     isLogin() {
-        if (!localStorage.getItem('usuarioLogueado')) {
+        if (!sessionStorage.getItem('usuarioLogueado')) {
             return null;
         } else {
-            return JSON.parse(localStorage.getItem('usuarioLogueado'));
+            return JSON.parse(sessionStorage.getItem('usuarioLogueado'));
         }
     }
     logOut() {
-        localStorage.removeItem('usuarioLogueado');
+        sessionStorage.removeItem('usuarioLogueado');
         location.href = "index.html";
     }
     mostrarElementos() {
@@ -38,7 +38,7 @@ class ControllerNavbar {
                 let auxiliar = this.crearA("Personal Account", "#", 1);
                 auxiliar.appendChild(this.crearSpan());
                 personalAccount.appendChild(auxiliar);
-                myMusic.appendChild(this.crearA("My Music", "mymusic.html"));
+                myMusic.appendChild(this.crearA("My Music", "pagina404.html"));
                 accountSettings.appendChild(this.crearA("Account Settings", "accountsettings.html"));
                 subMenuPersonalAccount.appendChild(myMusic);
                 subMenuPersonalAccount.appendChild(accountSettings);

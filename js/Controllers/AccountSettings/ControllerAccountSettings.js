@@ -44,7 +44,7 @@ class ControllerAccountSettings extends Controller {
         });
     }
     getUsuarioLogueado() {
-        let usuarioLogueado = localStorage.getItem('usuarioLogueado');
+        let usuarioLogueado = sessionStorage.getItem('usuarioLogueado');
         usuarioLogueado = JSON.parse(usuarioLogueado);
         return usuarioLogueado;
     }
@@ -106,7 +106,7 @@ class ControllerAccountSettings extends Controller {
         this.actualizarUsuarioLoguado();
     }
     actualizarUsuarioLoguado() {
-        localStorage.setItem('usuarioLogueado', JSON.stringify(this.usuarioLogueado));
+        sessionStorage.setItem('usuarioLogueado', JSON.stringify(this.usuarioLogueado));
     }
     validaPassword() {
         const REGEXPASSWORD = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,16}/;

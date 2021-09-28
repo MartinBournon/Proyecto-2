@@ -6,143 +6,78 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>STREAM ROCK</title>
-  <!-- BOOSTRAP only-->
+  <title>ROCK MUSIC</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous" />
-  <!-- CSS only -->
-  <link href="./styles/styles.css" rel="stylesheet" type="text/css" />
+  <link href="./css/styles.css" rel="stylesheet" type="text/css" />
   <link href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body class="body__Wave">
   <header>
-    <!-- COMIENZO DE NAVBAR -->
     <div class="bton"><span class="fas fa-bars"></span></div>
     <nav class="sidebar">
       <div class="text">ROCK ZONE</div>
       <ul class="main_side">
-
       </ul>
     </nav>
-    <!-- FIN DE NAVBAR -->
   </header>
-  <main class="d-flex align-items-center justify-content-center p-5">
-    <div class="modal fade" id="modalLogin" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1">
-      <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title">Login</h5>
-          </div>
-          <form action="" id="formLogin">
-            <div class="modal-body">
-              <div class="d-flex flex-column p-3">
-                <label class="formModal__label" for="username">Username</label>
-                <input class="formModal__input" type="text" id="username" name="username" maxlength="20" required>
-                <label class="formModal__label" for="password">Password</label>
-                <input class="formModal__input" type="password" id="password" name="password" maxlength="16" required>
-                <label for=""><a target="_blank" href="page404.html">¿Olvidaste tu
-                    contraseña?</a></label>
-              </div>
-            </div>
-            <div class="modal-footer justify-content-evenly">
-              <button type="button" id="btnCerrarLogin" class="btn btn-secondary"
-                data-bs-dismiss="modal">Cerrar</button>
-              <button type="submit" class="btn btn-primary">Ingresar</button>
-            </div>
-          </form>
-        </div>
+  <main>
+    <section class=" row justify-content-center p-5 align-items-center">
+      <div class="image__Group d-flex justify-content-center col-12 col-lg-5">
+        <img class="avatar__Group" src="./img/logo-bandas/acdc.png" alt="Logo de ACDC" />
       </div>
-    </div>
-    <div class="modal fade" id="modalRegistro" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1">
-      <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title">Registrarse</h5>
-          </div>
-
-          <form class="formModal" id="formRegistrar" action="">
-            <div class="modal-body">
-              <div class="d-flex flex-column">
-                <label class="formModal__label" for="name">Name</label>
-                <input class="formModal__input" type="text" id="name" name="name" maxlength="30" required>
-                <label class="formModal__label" for="lastname">Lastname</label>
-                <input class="formModal__input" type="text" id="lastname" name="lastname" maxlength="30" required>
-                <label class="formModal__label" for="email">Email</label>
-                <input class="formModal__input" type="email" id="email" name="email" maxlength="45" required>
-                <label class="formModal__label" for="usernameReg">Username</label>
-                <input class="formModal__input" type="text" id="usernameReg" name="usernameReg" maxlength="20" required>
-                <label class="formModal__label" for="passwordReg">Password</label>
-                <input class="formModal__input" type="password" id="passwordReg" name="passwordReg" maxlength="16"
-                  required>
-                <label class="formModal__label" for="passwordReg2">Repeat password</label>
-                <input class="formModal__input" type="password" id="passwordReg2" name="passwordReg2" maxlength="16"
-                  required>
-                <div class="d-flex justify-content-evenly align-items-center">
-                  <input type="checkbox" id="aceptoCond" name="aceptoCond" required>
-                  <label class="formModal__label" for="aceptoCond"><a id="terminos" href="page404.html"> Acepto los
-                      términos y condiciones</a></label>
-                </div>
-              </div>
-            </div>
-            <div class="modal-footer justify-content-evenly">
-              <button type="button" id="btnCerrarReg" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-              <button type="submit" class="btn btn-primary">Registrarse</button>
-            </div>
-          </form>
-
-
-        </div>
+      <div class="information__Group bg-light bg-opacity-75 rounded-3 col-12 col-lg-5">
+        <p>NAME: ACDC</p>
+        <P>COUNTRY: Australia</P>
+        <p>FLAG</p>
+        <p>OFICIAL PAGE: <a href="https://pwrup.acdc.com"> Haz Click Aqui</a></p>
       </div>
-    </div>
-    <section class="container">
-      <h1 class="text-center">AC/DC</h1>
-      <div class="contenedor__Grupo d-flex justify-content-start align-items-center gap-5">
-        <div class="contenedorAvatar">
-          <img class="contenedorAvatar__img" src="./img/logo bandas/logo acdc redondo.jpg" alt="" class="rounded-circle"
-            width="200px">
+    </section>
+    <section class="d-flex row row-cols-1 justify-content-center">
+      <div class="musicGroup row align-items-center ">
+        <div class="contenedorStar col-6 col-lg-2">
+          <img src="./img/iconos/star.png" alt="Favoritos">
         </div>
-        <div class="contenedor__Informacion d-flex col row-cols-1 row-cols-lg-2 align-items-center gap-5">
-          <div>
-            <p>ACDC</p>
-            <p>EEUU</p>
-          </div>
-          <div>
-            <img src="" alt="Favoritos">
-          </div>
-        </div>
+        <p class="text-center musicGroup__tema col-6 col-lg-2">thunderstruck</p>
+        <audio controls class="musicGroup__audio col-12 col-lg-6">
+          <source src="thunderstruck.mp3" type="audio/mp3">
+          Your browser does not support the audio element.
+        </audio>
       </div>
-      <div
-        class="contenedor__Reproductor d-flex row row-cols-1 row-cols-lg-2 align-items-center justify-content-center align-content-center p-5 m-1">
-        <div><audio controls>
-            <source src="" type="audio/mp3">
-            Your browser does not support the audio element.
-          </audio>
-          <p>thunderstruck - Album </p>
+      <div class="musicGroup row ">
+        <div class="contenedorStar col-6 col-lg-2">
+          <img src="./img/iconos/star.png" alt="Favoritos">
         </div>
-        <div><audio controls>
-            <source src="" type="audio/mp3">
-            Your browser does not support the audio element.
-          </audio>
-          <p>thunderstruck - Album </p>
+        <p class="text-center musicGroup__tema col-6 col-lg-2">thunderstruck</p>
+        <audio controls class="musicGroup__audio col-12 col-lg-6">
+          <source src="thunderstruck.mp3" type="audio/mp3">
+          Your browser does not support the audio element.
+        </audio>
+      </div class="contenedorStar">
+      <div class="musicGroup row">
+        <div class="contenedorStar col-6 col-lg-2">
+          <img src="./img/iconos/star.png" alt="Favoritos">
         </div>
-        <div><audio controls>
-            <source src="" type="audio/mp3">
-            Your browser does not support the audio element.
-          </audio>
-          <p>thunderstruck - Album </p>
+        <p class="text-center musicGroup__tema col-6 col-lg-2 ">thunderstruck</p>
+        <audio controls class="musicGroup__audio col-12 col-lg-6">
+          <source src="thunderstruck.mp3" type="audio/mp3">
+          Your browser does not support the audio element.
+        </audio>
+      </div>
+      <div class="musicGroup row ">
+        <div class="contenedorStar col-6 col-lg-2">
+          <img src="./img/iconos/star.png" alt="Favoritos">
         </div>
-        <div><audio controls>
-            <source src="" type="audio/mp3">
-            Your browser does not support the audio element.
-          </audio>
-          <p>thunderstruck - Album </p>
-        </div>
+        <p class="text-center musicGroup__tema col-6 col-lg-2">thunderstruck</p>
+        <audio controls class="musicGroup__audio col-12 col-lg-6">
+          <source src="thunderstruck.mp3" type="audio/mp3">
+          Your browser does not support the audio element.
+        </audio>
       </div>
     </section>
   </main>
   <footer class="general__Footer">
-    <!-- AQUI ENLACE OFICIAL A LA PAGINA DE ROCK.COM.AR Y ROLLING-->
     <div class="d-flex justify-content-lg-center flex-column flex-lg-row align-items-center">
       <div class="p-2">
         <a target="_blank" href="https://rock.com.ar/">
@@ -156,8 +91,6 @@
             alt="Logo de RollingCode" height="50px" /></a>
       </div>
     </div>
-
-    <!-- AQUI LICENCIA Y SEGURIDAD DE LA PAGINA-->
     <p id="license" class="text-center footer-license">
       © 2005-2021 Mozilla and individual contributors.
       </br>
@@ -168,11 +101,10 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous">
   </script>
-  <script src="./js/redirigir.js"></script>
-  <script src="./js/usuario.js"></script>
-  <script src="./js/controller.js"></script>
+  <script src="./js/Models/usuario.js"></script>
+  <script src="./js/Controllers/Controller.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="./js/controllerNavbar.js"></script>
+  <script src="./js/Controllers/Navbar/ControllerNavbar.js"></script>
   <script src="./js/index.js"></script>
 </body>
 
