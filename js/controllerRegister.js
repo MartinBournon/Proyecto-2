@@ -25,29 +25,29 @@ class ControllerRegister extends Controller {
         let email = document.querySelector("#email");
         let b = false;
         console.log("Validar Registro Usuarios");
-        this.delMsg();        
+        this.delMsg();
         if (username.value === '' || username.value.length === 0) {
             this.addMsgAfter("Username can't be empty", username);
             b = true;
         } else if (!REGEXUSERNAME.test(username.value)) {
             this.addMsgAfter("Username must be between 5 and 16 characters," +
                 "can contain uppercase, lowercase and numbers", username);
-                b = true;
+            b = true;
         } else if (this.buscarUsuario(username.value) != null) {
             this.addMsgAfter("This username is already in use", username);
             b = true;
         }
         if (!REGEXPASSWORD.test(password) || (password != password2.value)) {
-            this.addMsgAfter("Both password must be the same and must " +
-                "have unless one uppercase, one lowercase and one number", password2);
-                b = true;
+            this.addMsgAfter("Both password must be the same, must be between 8 and 16 characters " +
+                "have unless one uppercase, one lowercase and one number ", password2);
+            b = true;
         }
-        if(!REGEXEMAIL.test(email.value)){
+        if (!REGEXEMAIL.test(email.value)) {
             this.addMsgAfter("Enter a valid email", email);
             b = true;
         }
-        if(!b){
-            this.registrar(username.value,password,email.value);
+        if (!b) {
+            this.registrar(username.value, password, email.value);
         }
     }
     registrar(username, password, email) {
@@ -57,6 +57,7 @@ class ControllerRegister extends Controller {
         this.actualizarUsuarios();
         this.delMsg();
         this.limpiarVentana();
+        location.href = "index.html";
     }
     limpiarVentana() {
         this.delMsg();
@@ -67,5 +68,4 @@ class ControllerRegister extends Controller {
         document.querySelector("#aceptoCond").checked = false;
     }
 }
-
-let contReg = new ControllerRegister();
+const controllerRegister = new ControllerRegister();

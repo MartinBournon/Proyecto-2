@@ -1,29 +1,20 @@
 class Controller {
     constructor() {
-        this.usuarios = this.cargarUsuarios();
-        // localStorage.clear();
+        this.cargarUsuarios();
     }
     getUsuarios() {
         return this.usuarios;
     }
     cargarUsuarios() {
-        let usuarios = [];
+        let usuarios = [new Administrador("admin", "Admin123", "admin@admin.com")];
         if (!localStorage.getItem('usuarios')) {
-            return usuarios;
+            this.usuarios = usuarios;
+            this.actualizarUsuarios;
         } else {
             usuarios = localStorage.getItem('usuarios');
-            usuarios = JSON.parse(usuarios);
-            return usuarios;
+            this.usuarios = JSON.parse(usuarios);
         }
     }
-    // cargarGruposMusicales() {
-    //     if (!localStorage.getItem('gruposMusicales')) {
-    //         return this.gruposMusicales = [];
-    //     } else {
-    //         let gruposMusicales = localStorage.getItem('gruposMusicales');
-    //         return this.gruposMusicales = JSON.parse(gruposMusicales);
-    //     }
-    // }
     buscarUsuario(username) {
         return this.usuarios.find(usuario => {
             if (usuario.username == username) {

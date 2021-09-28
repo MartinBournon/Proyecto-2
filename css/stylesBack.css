@@ -253,7 +253,7 @@ main {
 @media (min-width: 768px) {
     .avatar {
         max-width: 200px;
-    }
+    }    
 }
 
 .avatar__img {
@@ -267,21 +267,11 @@ main {
     table-layout: fixed;
     width: 100%;
     border-collapse: collapse;
-    /* border: 2px solid black; */
-}
-
-table {
-    /* margin: auto; */
-    /* border-collapse: collapse; */
-    overflow-x: auto;
-    display: block;
-    width: fit-content;
-    /* max-width: 100%; */
-    box-shadow: 0 0 1px 1px rgba(0, 0, 0, .1);
+    border: 2px solid black;
 }
 
 .tablaListadoUsuarios thead th:nth-child(1) {
-    width: 40%;
+    width: 30%;
 }
 
 .tablaListadoUsuarios thead th:nth-child(2) {
@@ -310,32 +300,36 @@ td {
     background-color: gray;
 }
 
-.titulos{
+.adminPanel__titulo {
     padding-top: 50px;
 }
-.tablaListadoUsuarios {
+.tablaListadoUsuarios{
     margin-top: 40px;
 }
 
 
-.contenedorAvatar__img {
-    margin: 10px 0 10px 0;
-    box-shadow: 0 0 5px 10px rgba(0, 0, 0, 0.2);
+.accountSettings__titulo{
+    padding-top: 50px;
 }
 
-.accountSettings__label {
+.contenedorAvatar__img{
+    margin: 10px 0 10px 0;
+    box-shadow: 0 0 5px 10px rgba(0,0,0,0.2);
+}
+
+.accountSettings__label{
     font-size: 20px;
 }
 
-.accountSettings__inputs {
+.accountSettings__inputs{
     margin-bottom: 5px;
 }
 
-.accountSettings__btnGuardarCambios {
+.accountSettings__btnGuardarCambios{
     margin: 15px 0;
 }
 
-.footer {
+.footer{
     margin-top: 50px;
 }
 
@@ -348,55 +342,3 @@ td {
     background-color: white;
     color: black;
 } */
-
-
-
-td,
-th {
-    border: solid rgb(200, 200, 200) 1px;
-    padding: .5rem;
-}
-
-th {
-    text-align: left;
-    background-color: rgb(190, 220, 250);
-    text-transform: uppercase;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-    border-bottom: rgb(50, 50, 100) solid 2px;
-    border-top: none;
-}
-
-td {
-    white-space: nowrap;
-    border-bottom: none;
-    color: rgb(20, 20, 20);
-}
-
-td:first-of-type,
-th:first-of-type {
-    border-left: none;
-}
-
-td:last-of-type,
-th:last-of-type {
-    border-right: none;
-}
-
-.card{
-    border-radius: 30px;
-}
-.card-body{
-    margin: 0;
-    padding: 0;
-    justify-content: center;
-    border-radius: 30px;
-}
-.contenedorFavorito{
-    width: 300px;
-    margin-bottom: 10px;
-}
-
-audio{
-    width: 100%;
-}

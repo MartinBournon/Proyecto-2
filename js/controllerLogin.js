@@ -14,25 +14,40 @@ class ControllerLogin extends Controller {
             this.limpiarVentana();
         });
     }
-    validarLogin() {
+    valida(element) {
         let username = document.querySelector('#username').value;
         let password = document.querySelector('#password');
+        if (element.username === username &&
+            element.password === password.value &&
+            element.suspendido === false) {
+            return element;
+        } else {
+            return null;
+        }
+    }
+    validarLogin() {
         this.delMsg();
-        this.getUsuarios().find(element => {
-            if (element.username === username &&
-                element.password === password.value &&
-                element.suspendido === false) {
-                return this.login(element);
-            } else {
-                return this.addMsgAfter("Usuario o contraseña incorrectos", password);
-            }
+        let validar = this.getUsuarios().find(element => {
+            return this.valida(element);
         });
+        if (validar != null) {
+            console.log(validar);
+            this.login(validar);
+        } else {
+            this.addMsgAfter("Usuario o contraseña incorrectos", password);
+        }
     }
     login(usuario) {
-        console.log("HELA");
-        let usuarioLogueado = {usuario : usuario.username, permiso : usuario.permiso };
+        let usuarioLogueado = {
+            username: usuario.username,
+            permiso: usuario.permiso,
+        };
         localStorage.setItem('usuarioLogueado', JSON.stringify(usuarioLogueado));
-        location.href = "index.html";
+        if(usuario.permiso === 2){
+            location.href = "adminpanel.html";
+        }else{
+            location.href = "index.html"
+        }        
     }
     limpiarVentana() {
         this.delMsg();
@@ -40,5 +55,4 @@ class ControllerLogin extends Controller {
         document.querySelector("#password").value = "";
     }
 }
-
-let controllerLogin = new ControllerLogin();
+const controllerLogin = new ControllerLogin();

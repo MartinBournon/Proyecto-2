@@ -34,6 +34,9 @@ class Usuario {
     getSuspendido() {
         return this.suspendido;
     }
+    getPermiso(){
+        return this.permiso;
+    }
     setPassword(password) {
         this.password = password;
     }
@@ -55,21 +58,14 @@ class Usuario {
     setSuspendido(valor) {
         this.suspendido = valor;
     }
-    seguir(username) {
-        this.seguidos.push(username);
+    setPermiso(valor){
+        this.permiso = valor;
     }
-    dejarSeguir(username) {
-        let i = this.seguidos.indexOf(username);
-        if (i !== -1) {
-            this.seguidos.splice(i, 1);
-        }
-        super.actualizarUsuarios();
-    }
-
-
 }
 class Administrador extends Usuario {
-    constructor(username, password, nombre, email) {
-        super(username, password, nombre, email);
+    constructor(username, password, email) {
+        super(username, password, email);
+        this.permiso = 2;
     }
 }
+

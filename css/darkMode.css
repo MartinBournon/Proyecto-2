@@ -1,0 +1,109 @@
+.bton {
+    background: #1b1b1b;
+}
+
+.bton span {
+    color: white;
+}
+
+.sidebar {
+    background: #1b1b1b;
+}
+
+.sidebar.show {
+    left: 0px
+}
+
+.sidebar .text {
+    color: white;
+    background: #1e1e1e;
+}
+
+nav ul {
+    background: #1b1b1b;
+}
+
+nav ul li {
+    border-top: 1px solid rgba(255, 255, 255, 0.1)
+}
+
+nav ul li:last-child {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05)
+}
+
+nav ul li a {
+    color: white;
+}
+
+nav ul li.active a {
+    color: #FC5404;
+    background: #1e1e1e;
+    border-left-color: #FC5404
+}
+
+nav ul li a:hover {
+    background: #1e1e1e
+}
+
+nav ul ul li a {
+    color: #e6e6e6
+}
+
+nav ul li.active ul li a {
+    color: #e6e6e6;
+    background: #1b1b1b;
+}
+
+a:hover {
+    color: #FC5404 !important
+}
+
+nav ul ul li a:hover {
+    color: #FC5404 !important;
+    background: #1e1e1e !important
+}
+
+
+.content {
+    color: #202020;
+}
+
+/*FIN DE ESTILOS DE NAVBAR*/
+
+
+/*BAGGROUND GRADIENT*/
+
+body {
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #6c3fd3, #4d037e);
+}
+
+.footer-license {
+    color: whitesmoke;
+}
+
+.card {
+    background-color: rgb(248, 247, 247);
+}
+
+.contenedor__Informacion {
+    background-color: rgb(248, 247, 247);
+}
+
+
+.tablaListadoUsuarios {
+    border: 2px solid black;
+}
+
+
+#listadoUsuarios tr:nth-child(odd) {
+    background-color: lightgray;
+}
+
+#listadoUsuarios tr:nth-child(even) {
+    background-color: gray;
+}
+
+
+.contenedorAvatar__img{
+    box-shadow: 0 0 5px 10px rgba(0,0,0,0.2);
+}

@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+    <script src="./js/redirigir.js"></script>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -26,81 +27,6 @@
         <!-- FIN DE NAVBAR -->
     </header>
     <main>
-        <div class="modal fade" id="modalLogin" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1">
-            <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title">Login</h5>
-                    </div>
-                    <form action="" id="formLogin">
-                        <div class="modal-body">
-                            <div class="d-flex flex-column p-3">
-                                <label class="formModal__label" for="username">Username</label>
-                                <input class="formModal__input" type="text" id="username" name="username" maxlength="20"
-                                    required>
-                                <label class="formModal__label" for="password">Password</label>
-                                <input class="formModal__input" type="password" id="password" name="password"
-                                    maxlength="16" required>
-                                <label for=""><a target="_blank" href="page404.html">¿Olvidaste tu
-                                        contraseña?</a></label>
-                            </div>
-                        </div>
-                        <div class="modal-footer justify-content-evenly">
-                            <button type="button" id="btnCerrarLogin" class="btn btn-secondary"
-                                data-bs-dismiss="modal">Cerrar</button>
-                            <button type="submit" class="btn btn-primary">Ingresar</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-        <div class="modal fade" id="modalRegistro" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1">
-            <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title">Registrarse</h5>
-                    </div>
-
-                    <form class="formModal" id="formRegistrar" action="">
-                        <div class="modal-body">
-                            <div class="d-flex flex-column">
-                                <label class="formModal__label" for="name">Name</label>
-                                <input class="formModal__input" type="text" id="name" name="name" maxlength="30"
-                                    required>
-                                <label class="formModal__label" for="lastname">Lastname</label>
-                                <input class="formModal__input" type="text" id="lastname" name="lastname" maxlength="30"
-                                    required>
-                                <label class="formModal__label" for="email">Email</label>
-                                <input class="formModal__input" type="email" id="email" name="email" maxlength="45"
-                                    required>
-                                <label class="formModal__label" for="usernameReg">Username</label>
-                                <input class="formModal__input" type="text" id="usernameReg" name="usernameReg"
-                                    maxlength="20" required>
-                                <label class="formModal__label" for="passwordReg">Password</label>
-                                <input class="formModal__input" type="password" id="passwordReg" name="passwordReg"
-                                    maxlength="16" required>
-                                <label class="formModal__label" for="passwordReg2">Repeat password</label>
-                                <input class="formModal__input" type="password" id="passwordReg2" name="passwordReg2"
-                                    maxlength="16" required>
-                                <div class="d-flex justify-content-evenly align-items-center">
-                                    <input type="checkbox" id="aceptoCond" name="aceptoCond" required>
-                                    <label class="formModal__label" for="aceptoCond"><a id="terminos"
-                                            href="page404.html"> Acepto los
-                                            términos y condiciones</a></label>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="modal-footer justify-content-evenly">
-                            <button type="button" id="btnCerrarReg" class="btn btn-secondary"
-                                data-bs-dismiss="modal">Cerrar</button>
-                            <button type="submit" class="btn btn-primary">Registrarse</button>
-                        </div>
-                    </form>
-
-
-                </div>
-            </div>
-        </div>
         <h2 class="text-center container-center pt-5">HEAVY METAL</h2>
         <section class="section__Groups d-flex align-items-center justify-content-center m-1">
             <a href="">
@@ -153,10 +79,8 @@
     </script>
     <script src="./js/usuario.js"></script>
     <script src="./js/controller.js"></script>
-    <script src="./js/controllerLogin.js"></script>
-    <script src="./js/controllerRegister.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="./js/navbar.js"></script>
+    <script src="./js/controllerNavbar.js"></script>
     <script src="./js/index.js"></script>
 </body>
 

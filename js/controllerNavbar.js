@@ -1,35 +1,31 @@
-class Navbar {
+class ControllerNavbar {
     constructor() {
-        this.isLogin();
-
+        this.mostrarElementos();
     }
     setListeners() {
         let btnSignOut = document.querySelector("#btnSignOut");
-        if (btnSignOut != null) {
+        let btnLogin = document.querySelector("#btnLogin")
+        if (btnSignOut !== null) {
             btnSignOut.addEventListener('click', () => {
                 this.logOut();
             });
         }
     }
+
     isLogin() {
-        let usuarioLogueado = null;
         if (!localStorage.getItem('usuarioLogueado')) {
-            return usuarioLogueado;
+            return null;
         } else {
-            let usuarioLogueado = JSON.parse(localStorage.getItem('usuarioLogueado'));
-            return usuarioLogueado;
+            return JSON.parse(localStorage.getItem('usuarioLogueado'));
         }
     }
-
     logOut() {
         localStorage.removeItem('usuarioLogueado');
         location.href = "index.html";
     }
-
     mostrarElementos() {
         let usuarioLogueado = this.isLogin();
-        if (usuarioLogueado !== null) {
-            if (usuarioLogueado.permiso === 1) {
+        if (usuarioLogueado !== null) {            
                 let menu = document.querySelector(".main_side");
                 let home = this.crearLi();
                 let personalAccount = this.crearLi();
@@ -53,8 +49,12 @@ class Navbar {
                 menu.appendChild(home);
                 menu.appendChild(personalAccount);
                 menu.appendChild(rockComunity);
-                menu.appendChild(signOut);
-            }
+                if (usuarioLogueado.permiso === 2) {
+                    let adminPanel = this.crearLi()
+                    adminPanel.appendChild(this.crearA("Admin Panel" , "adminpanel.html"));
+                    menu.appendChild(adminPanel);
+                }
+                menu.appendChild(signOut);            
         } else {
             let menu = document.querySelector(".main_side");
             let home = this.crearLi();
@@ -70,44 +70,8 @@ class Navbar {
             menu.appendChild(home);
             menu.appendChild(login);
             menu.appendChild(register);
-
         }
-
         this.setListeners();
-        // if(true){
-        //     let menu = document.querySelector(".main_side");
-        //     let home = this.crearLi();
-        //     let personalAccount = this.crearLi();
-        //     let myMusic = this.crearLi();
-        //     let accountSettings = this.crearLi();
-        //     let subMenuPersonalAccount = this.crearUl("item-show-1");
-        //     let rockComunity = this.crearLi();
-        //     let login = this.crearLi();
-        //     let register = this.crearLi();
-        //     home.appendChild(this.crearA("Home", "index.html"));
-        //     let auxiliar = this.crearA("Personal Account" , "#", 1);
-        //     auxiliar.appendChild(this.crearSpan());
-        //     personalAccount.appendChild(auxiliar);
-        //     myMusic.appendChild(this.crearA("My Music", "mymusic.html"));
-        //     accountSettings.appendChild(this.crearA("Account Settings", "accountsettings.html"));
-        //     subMenuPersonalAccount.appendChild(myMusic);
-        //     subMenuPersonalAccount.appendChild(accountSettings);
-        //     console.log(subMenuPersonalAccount);
-        //     personalAccount.appendChild(subMenuPersonalAccount);
-        //     rockComunity.appendChild(this.crearA("Rock Community", "rockcommunity.html"));
-        //     login.appendChild(this.crearA("Login","#modalLogin"));
-        //     login.firstChild.setAttribute("data-bs-toggle", "modal");
-        //     login.firstChild.setAttribute("data-bs-target", "#modalLogin");
-        //     register.appendChild(this.crearA("Register" , "#modalRegistro"));
-        //     register.firstChild.setAttribute("data-bs-toggle", "modal");
-        //     register.firstChild.setAttribute("data-bs-target", "#modalRegistro");
-        //     menu.appendChild(home);
-        //     menu.appendChild(personalAccount);
-        //     menu.appendChild(rockComunity);
-        //     menu.appendChild(login);
-        //     menu.appendChild(register);
-
-        // }
     }
     crearUl(clase) {
         let ul = document.createElement("ul");
@@ -117,7 +81,6 @@ class Navbar {
     crearLi() {
         let li = document.createElement("li");
         return li;
-
     }
     crearA(texto, href, id = 0) {
         let a = document.createElement("a");
@@ -131,8 +94,5 @@ class Navbar {
         span.className = "fas fa-caret-down";
         return span;
     }
-
 }
-
-let navbar = new Navbar();
-navbar.mostrarElementos();
+const controllerNavbar = new ControllerNavbar();
