@@ -65,7 +65,7 @@ class ControllerAccountSettings extends Controller {
                 div.appendChild(this.crearImg());
                 div.firstChild.className = "avatar__img";
                 div.firstChild.setAttribute("type", "button");
-                div.firstChild.setAttribute("src", `./img/avatar/${i}.jpg`);
+                div.firstChild.setAttribute("src", `./img/avatar/${i}.jpeg`);
                 div.firstChild.setAttribute("alt", "Avatar banda de Rock");
                 div.firstChild.addEventListener('click', () => {
                     let usuario = this.buscarUsuario(this.usuarioLogueado.username);
