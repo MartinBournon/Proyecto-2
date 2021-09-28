@@ -69,7 +69,7 @@ class ControllerAccountSettings extends Controller {
                 div.firstChild.setAttribute("alt", "Avatar banda de Rock");
                 div.firstChild.addEventListener('click', () => {
                     let usuario = this.buscarUsuario(this.usuarioLogueado.username);
-                    usuario.avatar = `./img/avatar/${i}.jpg`;
+                    usuario.avatar = `./img/avatar/${i}.jpeg`;
                     $(function () {
                         $('#modalAvatares').modal('toggle');
                     });
